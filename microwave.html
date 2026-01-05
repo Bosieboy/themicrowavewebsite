@@ -1,0 +1,134 @@
+<html id="html">
+    <body>
+        <!--Search Bar-->
+        <div style="text-align: center; margin: 15px 0; padding: 10px;">
+            <input type="text" id="searchbar" placeholder="Search this website..." style="padding: 10px 15px; width: 300px; font-size: 16px; border: 2px solid #333; border-radius: 5px; font-family: Arial;">
+            <button onclick="highlightSearch()" style="padding: 10px 20px; margin-left: 10px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Find</button>
+        </div>
+        <!--Giving the site some style!-->
+        <h1 style="color: rgb(61, 61, 61); font-family: Fredoka One; text-align: center; font-size: 100px;">The Microwave Website!</h1>
+        <title>The Microwave Website!</title>
+        <h1 style="font-family: Comic Sans MS; color: firebrick; background-color: dimgrey; text-align: center;">This, is THE Microwave Website! Where you can find everything about microwaves!</h1>
+        <p style="text-align: center; font-family: Trebuchet MS; font-size: 100px;">Quick Links</p>
+        <div class="links" style="text-align:center;">
+            <button id="amazon" onclick="window.location.href='https://www.amazon.com/s?k=microwave'"></button>
+            <button id="wikipedia" onclick="window.location.href='https://en.wikipedia.org/wiki/Microwave_oven'"></button>
+            <button id="bestmicrowaves" onclick="window.location.href='bestmicrowaves.html'"></button>
+            <button id="ytvids" onclick="window.location.href='ytvids.html'">Epic Microwave YouTube Videos</button>
+            <button id="allpages" onclick="window.location.href='allpages.html'"></button>
+        </div>
+        <!--Background and Navigation Buttons-->
+        <style>
+           #html {
+                position: relative;
+           }
+           #html::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: url(https://t4.ftcdn.net/jpg/00/35/03/01/360_F_35030185_4f0JQTIWSQqAH2GQdMYBVFeeF2JK8Z72.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                opacity: 0.45;
+                z-index: -1;
+           }
+           #amazon {
+                background-image: url('https://cdn.brandfetch.io/idawOgYOsG/w/800/h/268/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B');
+                width: 200px;
+                height: 50px;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                margin: 3px auto;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            #wikipedia {
+                background-image: url("Wikipedia.png");
+                width: 200px;
+                height: 50px;
+                margin: 3px auto;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            #wikipedia:hover {
+                background-image: url("Wikipedia_hovered.png");
+                width: 200px;
+                height: 50px;
+                margin: 3px auto;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            #bestmicrowaves {
+                background-image: url(BestMicrowaves.png);
+                width: 200px;
+                height: 50px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin: 3px auto;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            #bestmicrowaves:hover {
+                background-image: url(BestMicrowaves_Hovered.png);
+                width: 200px;
+                height: 50px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin: 3px auto;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            #ytvids {
+                background-image: url("https://png.pngtree.com/png-clipart/20221019/original/pngtree-youtube-social-media-icon-png-image_8704830.png");
+                width: 200px;
+                height: 50px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin: 3px auto;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            #allpages {
+                background-image: url(ViewAll.png);
+                width: 200px;
+                height: 50px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin: 3px auto;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        </style>
+            <!--Search Script-->
+        <script>
+            function highlightSearch() {
+                const query = document.getElementById('searchbar').value.toLowerCase();
+                if (!query.trim()) {
+                    alert('Please enter a search term');
+                    return;
+                }
+                const bodyText = document.body.innerText.toLowerCase();
+                if (bodyText.includes(query)) {
+                    alert('Found: "' + query + '" on this page!');
+                } else {
+                    alert('No results found for: "' + query + '"');
+                }
+            }
+            document.getElementById('searchbar').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    highlightSearch();
+                }
+            });
+        </script>
+        </body>
+</html>

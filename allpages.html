@@ -1,0 +1,63 @@
+<html id="html">
+    <body>
+        <!--Search Bar-->
+        <div style="text-align: center; margin: 15px 0; padding: 10px;">
+            <input type="text" id="searchbar" placeholder="Search this website..." style="padding: 10px 15px; width: 300px; font-size: 16px; border: 2px solid #333; border-radius: 5px; font-family: Arial;">
+            <button onclick="highlightSearch()" style="padding: 10px 20px; margin-left: 10px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Find</button>
+        </div>
+        <!--Giving the site some style!-->
+        <h1 style="color: rgb(61, 61, 61); font-family: Fredoka One; text-align: center; font-size: 100px;">View All Pages</h1>
+        <title>View All Pages</title>
+        <h1 style="font-family: Comic Sans MS; color: firebrick; background-color: dimgrey; text-align: center;">All Pages on The Microwave Website</h1>
+        <p style="text-align: center; font-family: Trebuchet MS; font-size: 18px; color: white; margin: 20px;">
+            Navigate through all the pages on the microwave website!
+        <!--Navigation Buttons-->
+        </p>
+        <div class="links" style="text-align:center; margin: 20px 0;">
+            <button onclick="window.location.href='microwave.html'" style="padding: 10px 20px; margin: 6px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer;">Home</button>
+            <button onclick="window.location.href='bestmicrowaves.html'" style="padding: 10px 20px; margin: 6px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer;">Best Microwaves</button>
+            <button onclick="window.location.href='ytvids.html'" style="padding: 10px 20px; margin: 6px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer;">YouTube Videos</button>
+        </div>
+        <!--Background-->
+        <style>
+           #html {
+                position: relative;
+           }
+           #html::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: url(https://t4.ftcdn.net/jpg/00/35/03/01/360_F_35030185_4f0JQTIWSQqAH2GQdMYBVFeeF2JK8Z72.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                opacity: 0.45;
+                z-index: -1;
+           }
+        </style>
+        <!--Search Script-->
+        <script>
+            function highlightSearch() {
+                const query = document.getElementById('searchbar').value.toLowerCase();
+                if (!query.trim()) {
+                    alert('Please enter a search term');
+                    return;
+                }
+                const bodyText = document.body.innerText.toLowerCase();
+                if (bodyText.includes(query)) {
+                    alert('Found: "' + query + '" on this page!');
+                } else {
+                    alert('No results found for: "' + query + '"');
+                }
+            }
+            document.getElementById('searchbar').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    highlightSearch();
+                }
+            });
+        </script>
+        </body>
+</html>
